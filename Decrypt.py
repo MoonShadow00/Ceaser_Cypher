@@ -1,9 +1,6 @@
-import main
-from main import encryptedtext,driftvalue
-
 alphabet = list('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
 
-def ceaser_cypher(cyphertext, drift):
+def ceaser_decrypt(cyphertext, drift):
     result = ""
 
     for char in cyphertext.upper():
@@ -16,7 +13,3 @@ def ceaser_cypher(cyphertext, drift):
         else:
             result += char
     return result
-
-cyphertext = encryptedtext
-drift = driftvalue
-decrypted = ceaser_cypher(cyphertext, drift)

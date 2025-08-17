@@ -1,9 +1,6 @@
-import main
-from main import unencryptedtext,driftvalue
-
 alphabet = list('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
 
-def ceaser_cypher(plaintext, drift):
+def ceaser_encrypt(plaintext, drift):
     result = ""
 
     for char in plaintext.upper():
@@ -17,7 +14,4 @@ def ceaser_cypher(plaintext, drift):
             result += char
     return result
 
-plaintext = unencryptedtext
-drift = driftvalue
-encrypted = ceaser_cypher(plaintext, drift)
 
