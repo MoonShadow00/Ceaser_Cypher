@@ -1,20 +1,18 @@
-alphabet = list('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+import sys
+import Encrypt
+import Decrypt
+from Encrypt import encrypted
+from Decrypt import decrypted
 
-def ceaser_cypher(plaintext, drift):
-    result = ""
-
-    for char in plaintext.upper():
-        if char in alphabet:
-
-            old_index = alphabet.index(char)
-            new_index = (old_index + drift) % len(alphabet)
-            result += alphabet[new_index]
-
-        else:
-            result += char
-    return result
-
-plaintext = input()
-drift = int(input())
-encrypted = ceaser_cypher(plaintext, drift)
-print("Encrypted:", encrypted)
+data = input("would you like to encrypt or decrypt? Leave blank to Terminate ")
+if data == "encrypt":
+    unencryptedtext = input("Enter encrypted message")
+    driftvalue = int(input("Enter the number of drift in the ciphertext: "))
+    print("Encrypted:", encrypted)
+elif data == "decrypt":
+    encryptedtext = input("Enter encrypted message")
+    driftvalue = int(input("Enter the number of drift in the ciphertext: "))
+    print("Decrypted:", decrypted)
+elif data == "":
+    print("Program Terminated")
+    sys.exit(0)
